@@ -10,7 +10,7 @@ RESIDENCE_TYPE: 사는지역(범주) 1 = 도시 0 = 시골
 AVG_GLUCOSE_LEVEL: 글루코젠? AVG(수치)
 BMI: 비만도 (수치)
 SMOKING_STATUS: 흡연여부(범주) 1 = 흡 0= 비흡
-
+STROKE = 뇌졸증 1=Y 0 =N
 
 
 고혈압
