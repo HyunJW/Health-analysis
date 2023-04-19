@@ -1,0 +1,12 @@
+뇌졸증
+
+SEX: 성별 (범주 0,1)
+AGE: 나이 (수치 숫자)
+HYPERTENSION: (범주)
+HEART_DISEASE: 심장병(범주)
+EVER_MARRIED: (범주)
+WORK_TYPE:(범주)
+RESIDENCE_TYPE: (범주)
+AVG_GLUCOSE_LEVEL: (수치)
+BMI: (수치)
+SMOKING_STATUS: (범주)
