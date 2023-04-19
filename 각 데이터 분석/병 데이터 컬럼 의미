@@ -57,11 +57,7 @@ Diebetes (범주) 당뇨 여부
 
 Age : Age of the patient
 Sex : Sex of the patient
-cp : 가슴 통증 종류
--Value 1: typical angina 일반적인 협심증
--Value 2: atypical angina 일반적이지 않은 협심증
--Value 3: non-anginal pain 협심증이 아닌 통증
--Value 4: asymptomatic 무증상
+cp : 가슴 통증 종류 (0 무증상, 1 일반적인 협심증, 2 일반적이지 않은 협심증, 3 협심증이 아닌 통증)
 trtbps : resting blood pressure (in mm Hg) 휴식 중 혈압
 chol : cholestoral in mg/dl fetched via BMI sensor 혈중 콜레스테롤
 fbs : 공복 혈당 (fasting blood sugar > 120 mg/dl) (120 초과 1; 120 이하 0) 
