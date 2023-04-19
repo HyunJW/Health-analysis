@@ -72,5 +72,5 @@ rest_ecg : resting electrocardiographic results 휴식 중 심전도 결과
 thalach : maximum heart rate achieved 최대 심박수
 exang: 운동 유발성 협심증 (1 = yes; 0 = no)
 oldpeak: 휴식과 관련된 운동에 의해 유발된 ST 하강
-caa: 주요 혈관 수 (0~3, NULL=4)
+ca: 주요 혈관 수 (0~3, NULL=4)
 target : 0= less chance of heart attack 1= more chance of heart attack 심장마비 경험 여부 (1=있음 ; 0=없음)
