@@ -1,15 +1,15 @@
 뇌졸증
 
-SEX: 성별 (범주 0,1)
+SEX: 성별 (범주) 1 = M 0 = F
 AGE: 나이 (수치 숫자)
-HYPERTENSION: (범주)
-HEART_DISEASE: 심장병(범주)
-EVER_MARRIED: (범주)
-WORK_TYPE:(범주)
-RESIDENCE_TYPE: (범주)
-AVG_GLUCOSE_LEVEL: (수치)
-BMI: (수치)
-SMOKING_STATUS: (범주)
+HYPERTENSION: 고혈압 여부 (범주) 1 = Y 2 = N
+HEART_DISEASE: 심장병 여부 (범주) 1 = Y 2= N
+EVER_MARRIED:결혼 여부 (범주) 1 = Y 2 = N
+WORK_TYPE: 일 경험 (범주)0 = 안해봄 1 = 어릴때 2 = 공무직 3 = 직장인  4 = 자영업 
+RESIDENCE_TYPE: 사는지역(범주) 1 = 도시 0 = 시골
+AVG_GLUCOSE_LEVEL: 글루코젠? AVG(수치)
+BMI: 비만도 (수치)
+SMOKING_STATUS: 흡연여부(범주) 1 = 흡 0= 비흡
 
 
 
