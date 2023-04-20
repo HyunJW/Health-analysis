@@ -57,18 +57,17 @@ Diebetes (범주) 당뇨 여부
 
 Age : Age of the patient
 Sex : Sex of the patient
-cp : 가슴 통증 종류 (0 무증상, 1 일반적인 협심증, 2 일반적이지 않은 협심증, 3 협심증이 아닌 통증)
+cp : 가슴 통증 종류 (0 무증상, 1 일반적인 협심증, 2 일반적이지 않은 협심증, 3 협심증이 아닌 통증) (무증상: n; 증상: y)
 trtbps : resting blood pressure (in mm Hg) 휴식 중 혈압
 chol : cholestoral in mg/dl fetched via BMI sensor 혈중 콜레스테롤
-fbs : 공복 혈당 (fasting blood sugar > 120 mg/dl) (120 초과 1; 120 이하 0) 
-rest_ecg : resting electrocardiographic results 휴식 중 심전도 결과
+fbs : 공복 혈당 (fasting blood sugar > 120 mg/dl) (120 초과y 1; 120 이하n 0) 
+rest_ecg : resting electrocardiographic results 휴식 중 심전도 결과 (정상: n; 이상: y)
 -Value 0: normal 정상
 -Value 1: ST-T 역파 이상(T파 반전 및/또는 0.05mV 이상의 ST 상승 또는 하강)
 -Value 2: 가능성이 있거나 확실한 좌심실 비대
 thalach : maximum heart rate achieved 최대 심박수
 exang: 운동 유발성 협심증 (1 = yes; 0 = no)
 oldpeak: 휴식과 관련된 운동에 의해 유발된 ST 하강
-slope: 활동 ST분절 피크의 기울기(0 하강, 1 평탄, 2 상승)
-thal:지중해빈혈 여부(3 정상, 6 고정 결함, 7 가역 결함)
-ca: 주요 혈관 수 (0~3, NULL=4)
+slope: 활동 ST분절 피크의 기울기(0 하강, 1 평탄, 2 상승) (평탄: n; 하강,상승: y)
+ca: 주요 혈관 수 (0~3)
 target : 0= less chance of heart attack 1= more chance of heart attack 심장마비 경험 여부 (1=있음 ; 0=없음)
