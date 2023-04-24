@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        #topMenu { height: 30px; width: 100%; }
+        #topMenu ul li { list-style: none; color: white;
+                 background-color: #2d2d2d; width: 10%;
+                 float: left; line-height: 30px;
+                 vertical-align: middle; text-align: center; }
+        #topMenu .menuLink { text-decoration: none;
+                     color: white; display: block;
+                     width: 150px; font-size: 15px;
+                     font-weight: bold;}
+        #topMenu .menuLink:hover { color: yellow; background-color: #4d4d4d;}
         header {
             background-color: rgb(191, 255, 255);
             width: 96%;
@@ -39,9 +49,34 @@
     </style>
 </head>
 <body>
-    <!-- <banner>
-        광고1
-    </banner> -->
+	<nav id="topMenu" >
+		<ul>
+            <form action="menu1" method="get">
+                <!-- <li><a class="menuLink" onclick="menu1">menu1</a></li> -->
+                <li><input type="submit" value="menu1"></li>
+            </form>
+			<li>|</li>
+            <form action="menu2" method="get">
+                <!-- <li><a class="menuLink" onclick="menu2">menu2</a></li> -->
+                <li><input type="submit" value="menu2"></li>
+            </form>
+			<li>|</li>
+            <form action="menu3" method="get">
+                <!-- <li><a class="menuLink" onclick="menu3">menu3</a></li> -->
+                <li><input type="submit" value="menu3"></li>
+            </form>
+			<li>|</li>
+            <form action="menu4" method="get">
+                <!-- <li><a class="menuLink" onclick="menu4">menu4</a></li> -->
+                <li><input type="submit" value="menu4"></li>
+            </form>
+			<li>|</li>
+            <form action="menu5" method="get">
+                <!-- <li><a class="menuLink" onclick="menu5">menu5</a></li> -->
+                <li><input type="submit" value="menu5"></li>
+            </form>
+		</ul>
+	</nav>
     <header>
         링크1 링크2 링크3 링크4
         <br><br>
