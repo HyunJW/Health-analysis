@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>질병 예측</h2>
-<form method="post" action="result">
+<form method="post" action="heart_result">
     나이: <input type="text" name="age"><br>
     성별:
     <select name="sex">
@@ -19,7 +19,6 @@
         <option value="y">증상</option>
     </select><br>
     휴식 중 혈압: <input type="text" name="trtbps"><br>
-    혈중 콜레스테롤: <input type="text" name="chol"><br>
     공복 혈당: <input type="text" name="fbs"><br>
     휴식 중 심전도 결과:
     <select name="ecg">
@@ -32,7 +31,7 @@
         <option value="n">없음</option>
         <option value="y">있음</option>
     </select><br>
-    휴식 대비 운동으로 인한 ST 하락 폭: <input type="text" name="oldspeak"><br>
+    휴식 대비 운동으로 인한 ST 하락 폭: <input type="text" name="oldpeak"><br>
     활동 ST분적 피크의 기울기:
     <select name="sl">
         <option value="n">평탄</option>
