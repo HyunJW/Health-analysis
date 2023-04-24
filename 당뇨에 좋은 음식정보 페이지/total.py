@@ -455,9 +455,9 @@ def diabetes_result():
                            smoke=smoke, HDA=HDA, PA=PA, fruit=fruit, veggies=veggies,
                            HAC=HAC, GH=GH, MH=MH, PH=PH, DW=DW, stroke=stroke, HBP=HBP)
 
-@app.route('/advise', methods=['GET'])
-def advise():
-    return render_template('diabetes/advise.html')
+@app.route('/diabetes_advise', methods=['GET'])
+def diabetes_advise():
+    return render_template('diabetes/diabetes_advise.html')
 
 if __name__ == '__main__':
     app.run(port=8888, threaded=False)
