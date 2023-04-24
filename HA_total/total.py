@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import joblib
 from keras.models import load_model
 import numpy as np
@@ -7,6 +7,26 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('total/mainpage.html')
+
+@app.route('/menu1')
+def menu1():
+    return redirect('http://www.naver.com')
+
+@app.route('/menu2')
+def menu2():
+    return redirect('http://www.daum.net')
+
+@app.route('/menu3')
+def menu3():
+    return redirect('http://www.nate.com')
+
+@app.route('/menu4')
+def menu4():
+    return redirect('http://www.google.go.kr')
+
+@app.route('/menu5')
+def menu5():
+    return redirect('http://www.youtube.com')
 
 @app.route('/heartattack', methods=['GET'])
 def heartattack():
