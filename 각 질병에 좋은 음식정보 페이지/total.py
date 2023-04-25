@@ -459,5 +459,17 @@ def diabetes_result():
 def diabetes_advise():
     return render_template('diabetes/diabetes_advise.html')
 
+@app.route('/heartattack_advise', methods=['GET'])
+def heartattack_advise():
+    return render_template('heartattack/heartattack_advise.html')
+
+@app.route('/hypertension_advise', methods=['GET'])
+def hypertension_advise():
+    return render_template('hypertension/hypertension_advise.html')
+
+@app.route('/stroke_advise', methods=['GET'])
+def stroke_advise():
+    return render_template('stroke/stroke_advise.html')
+
 if __name__ == '__main__':
     app.run(port=8888, threaded=False)
