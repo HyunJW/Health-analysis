@@ -9,13 +9,13 @@ def main():
 
 @app.route('/result',methods=['POST'])
 def result():
-    model = joblib.load('C:/Users/tjoeun/Desktop/health_data/heart_model.h5')
-    scaler = joblib.load('C:/Users/tjoeun/Desktop/health_data/heart.sav')
+    model = joblib.load('C:/Users/tjoeun/Desktop/Health-analysis/쟝고 정리/heartattack/heart_model.h5')
+    scaler = joblib.load('C:/Users/tjoeun/Desktop/Health-analysis/쟝고 정리/heartattack/heart.sav')
 
     age = float(request.form['age'])
     trtbps = float(request.form['trtbps'])
     thalach = float(request.form['thalach'])
-    oldspeak = float(request.form['oldspeak'])
+    oldpeak = float(request.form['oldpeak'])
     sex = request.form['sex']
     if sex == "f":
         female = 1
@@ -65,7 +65,7 @@ def result():
     else:
         ca_n = 0
         ca_y = 1
-    test_set = [[age, trtbps, thalach, oldspeak,
+    test_set = [[age, trtbps, thalach, oldpeak,
                  female, male, cp_n, cp_y, fbs_n, fbs_y,
                  ecg_n, ecg_y, exang_n, exang_y, sl_n, sl_y,
                  ca_n, ca_y]]
@@ -81,7 +81,7 @@ def result():
 
     return render_template('heart/result.html',
                            result=result,age=age, trtbps=trtbps,
-                           thalach=thalach, oldspeak=oldspeak,
+                           thalach=thalach, oldpeak=oldpeak,
                            sex=sex, cp=cp, fbs=fbs, ecg=ecg, exang=exang,
                            sl=sl, ca=ca, pred=pred)
 if __name__ == '__main__':
