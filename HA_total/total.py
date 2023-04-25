@@ -34,8 +34,8 @@ def diabetes():
 
 @app.route('/heartattack_result',methods=['POST'])
 def heartattack_result():
-    model = joblib.load('C:/projecttest/chan/HA_total/heart_model.h5')
-    scaler = joblib.load('C:/projecttest/chan/HA_total/heart.sav')
+    model = joblib.load('C:/Health Analysis/HA_total/heart_model.h5')
+    scaler = joblib.load('C:/Health Analysis/HA_total/heart.sav')
 
     age = float(request.form['age'])
     trtbps = float(request.form['trtbps'])
@@ -116,9 +116,9 @@ def stroke_result():
     print(333)
     print(444)
     #kerasmodel = load_model('c:/Health Analysis/HA_total/test4/miniproject1.h5')
-    kerasmodel = tf.keras.models.load_model('c:/projecttest/chan/HA_total/miniproject1.h5', compile=False)
+    kerasmodel = tf.keras.models.load_model('c:/Health Analysis/HA_total/miniproject1.h5', compile=False)
 
-    scaler = joblib.load('c:/projecttest/chan/HA_total/miniscaler.sav')
+    scaler = joblib.load('c:/Health Analysis/HA_total/miniscaler.sav')
     SEX = request.form['SEX']
     AGE = float(request.form['AGE'])
     HYPERTENSION = request.form['HYPERTENSION']
@@ -212,7 +212,7 @@ def stroke_result():
 
 @app.route('/hypertension_result', methods=['POST'])
 def hypertension_result():
-    model = load_model('c:/projecttest/chan/HA_total/hypertension_model.h5')
+    model = load_model('c:/Health Analysis/HA_total/hypertension_model.h5')
     age = int(request.form['age'])
     trestbps = int(request.form['trestbps'])
     thalach = int(request.form['thalach'])
@@ -271,7 +271,7 @@ def hypertension_result():
     test_set = [[age, trestbps, thalach, oldpeak, female, male, cp_n, cp_y,
                  fbs_n, fbs_y, ecg_n, ecg_y, exang_n, exang_y, slope_n, slope_y,
                  ca_n, ca_y]]
-    scaler = joblib.load("c:/projecttest/chan/HA_total/scaler.sav")
+    scaler = joblib.load("c:/Health Analysis/HA_total/scaler.sav")
     test_set = scaler.transform(test_set)
     rate = model.predict(test_set)
     if rate >= 0.5:
@@ -285,8 +285,8 @@ def hypertension_result():
 
 @app.route('/diabetes_result', methods=['POST'])
 def diabetes_result():
-    model = load_model('C:/projecttest/chan/HA_total/neo_keras.h5')
-    scaler = joblib.load('C:/projecttest/chan/HA_total/scaler.model')
+    model = load_model('C:/Health Analysis/HA_total/neo_keras.h5')
+    scaler = joblib.load('C:/Health Analysis/HA_total/scaler.model')
 
     age = int(request.form['age'])
     sex = request.form['sex']
