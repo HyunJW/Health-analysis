@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .input_m{
+                width: 150px;
+                height: 35px;
+                background-color: transparent;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+                font-size: 13pt;
+                font-weight: bold;
+                }
+        .input_m:hover{
+                width: 150px;
+                height: 35px;
+                background-color: gray;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+                font-size: 13pt;
+                font-weight: bold;
+                }
+    </style>
+</head>
+<body>
+<table style="text-align:center; border-collapse: collapse;
+                  margin-left:auto; margin-right:auto; width: 1000px;"
+                  border="2px">
+          <tr style="font-size: 15pt; padding: 15px;">
+            <th>질병</th>
+            <th>소스코드 보기</th>
+          </tr>
+          <tr style="font-size: 15pt; padding: 15px;">
+            <td>심장마비</td>
+            <td>
+              <form action="heart">
+                <input class="input_m" type="submit" value="심장마비 분석 소스">
+              </form>
+            </td>
+          </tr>
+          <tr style="font-size: 15pt; padding: 15px;">
+            <td>고혈압</td>
+            <td>
+              <form action="hyper">
+                <input class="input_m" type="submit" value="고혈압 분석 소스">
+              </form>
+            </td>
+          </tr>
+          <tr style="font-size: 15pt; padding: 15px;">
+            <td>뇌졸중</td>
+            <td>
+              <form action="stroke1">
+                <input class="input_m" type="submit" value="뇌졸중 분석 소스1">
+              </form>
+              <form action="stroke2">
+                <input class="input_m" type="submit" value="뇌졸중 분석 소스2">
+              </form>
+            </td>
+          </tr>
+          <tr style="font-size: 15pt; padding: 15px;">
+            <td>당뇨병</td>
+            <td>
+              <form action="dia">
+                <input class="input_m" type="submit" value="당뇨병 분석 소스">
+              </form>
+            </td>
+          </tr>
+    </table>
+</body>
+</html>
