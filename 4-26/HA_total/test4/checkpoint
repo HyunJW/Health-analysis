@@ -1,0 +1,2 @@
+model_checkpoint_path: "miniproject1.weight"
+all_model_checkpoint_paths: "miniproject1.weight"
