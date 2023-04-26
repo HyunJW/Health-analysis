@@ -493,7 +493,29 @@ def hypertension_advise():
 def stroke_advise():
     return render_template('stroke/stroke_advise.html')
 
+@app.route('/source', methods=['GET'])
+def source():
+    return render_template('health_info/project.html')
 
+@app.route('/heart', methods=['GET'])
+def heart():
+    return render_template('source/heartattack.html')
+
+@app.route('/hyper', methods=['GET'])
+def hyper():
+    return render_template('source/hypertension.html')
+
+@app.route('/stroke1', methods=['GET'])
+def stroke1():
+    return render_template('source/stroke1.html')
+
+@app.route('/stroke2', methods=['GET'])
+def stroke2():
+    return render_template('source/stroke2.html')
+
+@app.route('/dia', methods=['GET'])
+def dia():
+    return render_template('source/diabetes.html')
 
 if __name__ == '__main__':
     app.run(port=8888, threaded=False)
