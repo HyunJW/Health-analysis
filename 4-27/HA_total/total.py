@@ -5,9 +5,6 @@ import numpy as np
 
 app = Flask(__name__)
 
-
-
-
 @app.errorhandler(404)
 def notpage(error):
     return render_template('total/errorpage.html')
@@ -45,14 +42,6 @@ def hypertension():
 @app.route('/diabetes', methods=['GET'])
 def diabetes():
     return render_template('diabetes/input.html')
-
-@app.route('/checkup')
-def checkup():
-    return render_template('banner/checkup.html')
-
-@app.route('/vaccination')
-def vaccination():
-    return render_template('banner/vaccination.html')
 
 @app.route('/heartattack_result',methods=['POST'])
 def heartattack_result():
@@ -524,6 +513,14 @@ def stroke2():
 @app.route('/dia', methods=['GET'])
 def dia():
     return render_template('source/diabetes.html')
+
+@app.route('/checkup', methods=['GET'])
+def checkup():
+    return render_template('banner/checkup.html')
+
+@app.route('/vaccination', methods=['GET'])
+def vaccination():
+    return render_template('banner/vaccination.html')
 
 if __name__ == '__main__':
     app.run(port=8888, threaded=False)
