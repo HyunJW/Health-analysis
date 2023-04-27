@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #Wrap{
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #Header{
+            width: auto;
+            border: 1px solid #cccccc;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center
+        }
+        #predict{
+            float: left;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+            width: 50%;
+            height: 600px;
+            padding-left: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        #information{
+            float: right;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+            width: 50%;
+            height: 600px;
+            overflow: scroll;
+            padding-left: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        #footer{
+            width: 100%;
+            border: 1px solid #cccccc;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="Wrap">
+<div id="Header">
+        당뇨병 예측 결과표
+</div>
+<div id="predict">
+    나이: {{ age }}<br>
+    성별: {{ sex }}<br>
+    혈중 총 콜레스테롤: {{ chol }}<br>
+    콜레스테롤 검사여부: {{ chol_check }}<br>
+    BMI 지수: {{ BMI }}<br>
+    흡연 여부: {{ smoke }}<br>
+    심장병 여부: {{ HDA }}<br>
+    운동 여부(월 1회 이상): {{ PA }}<br>
+    과일 섭취 여부(일 1회 이상): {{ fruit }}<br>
+    야채 섭취 여부(일 1회 이상): {{ veggies }}<br>
+    음주 여부(하루 1잔 이상): {{ HAC }}<br>
+    건강 상태: {{ GH }}<br>
+    심리적 건강 상태: {{ MH }}<br>
+    육체적 건강 상태: {{ PH }}<br>
+    계단 오르기 힘든지 여부: {{ DW }}<br>
+    뇌졸중 진단 여부: {{ stroke }}<br>
+    고혈압 여부: {{ HBP }}<br>
+
+    <h2>당뇨병 진단 예측 결과 : {{result}}({{prob}}%)</h2>
+</div>
+
+    <div id="information">
+
+        <li>혈압 수치 기준</li>
+        <table style="text-align:center;border-collapse: collapse; width: 550px;" border="2px">
+            <tr style="font-size: 15pt;">
+                <th>혈압 분류</th>
+                <th>수축기혈압(mmHg)</th>
+                <th></th>
+                <th>이완기혈압(mmHg)</th>
+            </tr>
+            <tr>
+                <td>정상혈압</td>
+                <td><120</td>
+                <td>그리고</td>
+                <td><80</td>
+            </tr>
+            <tr>
+                <td>주의혈압</td>
+                <td>120~129</td>
+                <td>그리고</td>
+                <td><80</td>
+            </tr>
+            <tr>
+                <td>고혈압전단계</td>
+                <td>130~139</td>
+                <td>또는</td>
+                <td>80~89</td>
+            </tr>
+            <tr>
+                <td>고혈압 1기</td>
+                <td>140~159</td>
+                <td>또는</td>
+                <td>90~99</td>
+            </tr>
+            <tr>
+                <td>고혈압 2기</td>
+                <td>160~</td>
+                <td>또는</td>
+                <td>100~</td>
+            </tr>
+            <tr>
+                <td>수축기단독고혈압</td>
+                <td>140~</td>
+                <td>그리고</td>
+                <td><90</td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <li>BMI 수치 기준</li>
+        <table style="text-align:center;border-collapse: collapse; width: 550px;" border="2px">
+            <tr style="font-size: 15pt;">
+                <th rowspan="2">비만분류</th>
+                <th colspan="2">체질량지수</th>
+            </tr>
+            <tr>
+                <th>세계기준</th>
+                <th>국내기준</th>
+            </tr>
+            <tr>
+                <td>저체중</td>
+                <td>18.5 미만</td>
+                <td>18.5 미만</td>
+            </tr>
+            <tr>
+                <td>정상</td>
+                <td>18.5~24.9</td>
+                <td>18.5~22.9</td>
+            </tr>
+            <tr>
+                <td>과체중</td>
+                <td>25.0~29.9</td>
+                <td>23.0~24.9</td>
+            </tr>
+            <tr>
+                <td>비만</td>
+                <td>30.0~39.0</td>
+                <td>25.0~29.9</td>
+            </tr>
+            <tr>
+                <td>고도비만</td>
+                <td>40.0 이상</td>
+                <td>30.0 이상</td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <li>콜레스테롤 수치 기준</li>
+        <table style="text-align:center;border-collapse: collapse; width: 550px;" border="2px">
+            <tr style="font-size: 15pt;">
+                <th>진단 기준</th>
+                <th>콜레스테롤 수치(mg/dL)</th>
+            </tr>
+            <tr>
+                <td>정상 범위</td>
+                <td>120~200</td>
+            </tr>
+            <tr>
+                <td>경계치</td>
+                <td>200~239</td>
+            </tr>
+            <tr>
+                <td>위험 수준</td>
+                <td>240~</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="footer">
+        <form action="heartattack_advise">
+            <input type="submit" value="도움이 되는 정보">
+        </form>
+        <a href="/" >🏡</a>
+    </div>
+
+</div>
+
+</body>
+</html>
