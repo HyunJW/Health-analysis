@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #Wrap{width:100%; overflow:hidden; margin:0 auto; padding-top: 50px}
+        header {
+              position: auto;
+              textarea: fixed;
+              margin: auto;
+              width: 1800px;
+              top: 10px;
+              text-align: center;
+              height: 75px;
+              float: left;
+              padding-left: 32px;
+              padding-right: 32px;
+              background-size: cover;
+              background-color: white;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+        ul {
+              list-style-type: none;
+              padding: 0;
+            }
+
+        li {
+              display: inline-block;
+              margin-left: 16px;
+              font-size: 18px;
+              font-weight: flex;
+            }
+        .input_m{
+                width: 150px;
+                height: 35px;
+                background-color: transparent;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+                font-size: 13pt;
+                font-weight: bold;
+                }
+        .input_m:hover{
+                width: 150px;
+                height: 35px;
+                background-color: gray;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+                font-size: 13pt;
+                font-weight: bold;
+                }
+
+        #home{
+              background-color: transparent;
+              font-size: 13pt;
+              font-weight: bold;
+              color: black;
+              text-decoration-line : none;
+              }
+        #home:hover{
+              background-color: transparent;
+              font-size: 13pt;
+              font-weight: bold;
+              background-color: gray;
+              color: black;
+              text-decoration-line : none;
+              }
+    </style>
+</head>
+<body >
+<header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+      <ul>
+          <li>|</li>
+          <li>
+          <form action="information">
+              <input class="input_m" type="submit" value="건강 수치 기준"></li>
+            </form>
+         <li>|</li>
+            <li><form action="hospital">
+                <!-- <li><a class="menuLink" onclick="menu2">menu2</a></li> -->
+                <input class="input_m" type="submit" value="대학병원 정보"></li>
+            </form>
+         <li>|</li>
+            <li><form action="advise">
+                <input class="input_m" type="submit" value="건강 관리 정보"></li>
+            </form>
+         <li>|</li>
+            <li><form action="source">
+                <!-- <li><a class="menuLink" onclick="menu4">menu4</a></li> -->
+                <input class="input_m" type="submit" value="질병 분석 소스"></li>
+            </form>
+         <li>|</li>
+            <li><form action="menu5" method="get">
+                <!-- <li><a class="menuLink" onclick="menu5">menu5</a></li> -->
+                <input class="input_m" type="submit" value="menu5"></li>
+          <li>|</li>
+            </form>
+      </ul>
+    </header>
+<br>
+<div id="Wrap">
+    <h1 style="text-align: center">프로젝트 정보</h1>
+    <table style="text-align:center; border-collapse: collapse;
+                  margin-left:auto; margin-right:auto; width: 1000px;"
+                  border="2px">
+          <tr style="font-size: 15pt; padding: 15px;">
+            <th style="padding: 15px;">병명</th>
+            <th>데이터 출처</th>
+            <th>담당자</th>
+            <th>코드 정보</th>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">심장병</td>
+            <td><a href="https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset">심장병 데이터 1<br>
+                <a href="https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset?select=heart.csv">심장병 데이터 2<br>
+                <a href="https://www.kaggle.com/datasets/rishidamarla/heart-disease-prediction">심장병 데이터 3</td>
+            <td>송수린</td>
+            <td>
+              <form action="heart">
+                <input class="input_m" type="submit" value="심장병 분석 소스">
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">고혈압</td>
+            <td><a href="https://www.kaggle.com/datasets/prosperchuks/health-dataset">고혈압 데이터</td>
+            <td>현정환</td>
+            <td>
+              <form action="hyper">
+                <input class="input_m" type="submit" value="고혈압 분석 소스">
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">뇌졸중</td>
+            <td><a href="https://www.kaggle.com/datasets/prosperchuks/health-dataset">뇌졸중 데이터</td>
+            <td>송찬의</td>
+            <td>
+              <form action="stroke1">
+                <input class="input_m" type="submit" value="뇌졸중 분석 소스1">
+              </form>
+              <form action="stroke2">
+                <input class="input_m" type="submit" value="뇌졸중 분석 소스2">
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">당뇨병</td>
+            <td><a href="https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset">당뇨병 데이터</td>
+            <td>김창균</td>
+            <td>
+              <form action="dia">
+                <input class="input_m" type="submit" value="당뇨병 분석 소스">
+              </form>
+            </td>
+          </tr>
+    </table>
+    <br><br>
+    <h1 style="text-align:center;"><a href="/" >🏡</a></h1>
+</div>
+</body>
+</html>

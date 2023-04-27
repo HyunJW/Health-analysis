@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #Wrap{width:100%; overflow:hidden; margin:0 auto; padding-top: 50px}
+        header {
+              position: auto;
+              textarea: fixed;
+              margin: auto;
+              width: 1800px;
+              top: 10px;
+              text-align: center;
+              height: 75px;
+              float: left;
+              padding-left: 32px;
+              padding-right: 32px;
+              background-size: cover;
+              background-color: white;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+        ul {
+              list-style-type: none;
+              padding: 0;
+            }
+
+        li {
+              display: inline-block;
+              margin-left: 16px;
+              font-size: 18px;
+              font-weight: flex;
+            }
+        .input_m{
+                width: 150px;
+                height: 35px;
+                background-color: transparent;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+                font-size: 13pt;
+                font-weight: bold;
+                }
+        .input_m:hover{
+                width: 150px;
+                height: 35px;
+                background-color: gray;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid black;
+                font-size: 13pt;
+                font-weight: bold;
+                }
+
+        #home{
+              background-color: transparent;
+              font-size: 13pt;
+              font-weight: bold;
+              color: black;
+              text-decoration-line : none;
+              }
+        #home:hover{
+              background-color: transparent;
+              font-size: 13pt;
+              font-weight: bold;
+              background-color: gray;
+              color: black;
+              text-decoration-line : none;
+              }
+    </style>
+</head>
+<body>
+<header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+      <ul>
+          <li>|</li>
+          <li>
+          <form action="information">
+              <input class="input_m" type="submit" value="건강 수치 기준"></li>
+            </form>
+         <li>|</li>
+            <li><form action="hospital">
+                <!-- <li><a class="menuLink" onclick="menu2">menu2</a></li> -->
+                <input class="input_m" type="submit" value="대학병원 정보"></li>
+            </form>
+         <li>|</li>
+            <li><form action="advise">
+                <input class="input_m" type="submit" value="건강 관리 정보"></li>
+            </form>
+         <li>|</li>
+            <li><form action="source">
+                <!-- <li><a class="menuLink" onclick="menu4">menu4</a></li> -->
+                <input class="input_m" type="submit" value="질병 분석 소스"></li>
+            </form>
+         <li>|</li>
+            <li><form action="menu5" method="get">
+                <!-- <li><a class="menuLink" onclick="menu5">menu5</a></li> -->
+                <input class="input_m" type="submit" value="menu5"></li>
+          <li>|</li>
+            </form>
+      </ul>
+    </header>
+<br>
+<div id="Wrap">
+    <h1 style="text-align: center">대학병원 정보</h1>
+    <table style="text-align:center; border-collapse: collapse;
+                  margin-left:auto; margin-right:auto; width: 1000px;"
+                  border="2px">
+          <tr style="font-size: 15pt; padding: 15px;">
+            <th style="padding: 15px;">병원명</th>
+            <th>주소</th>
+            <th>전화번호</th>
+            <th>홈페이지</th>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">서울아산병원</td>
+            <td><a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%95%84%EC%82%B0%EB%B3%91%EC%9B%90/place/11686884?c=15,0,0,0,dh&placePath=%3Fentry%253Dbmp">서울특별시 송파구 올림픽로 43길 88 서울아산병원</a></td>
+            <td>1688-7575 </td>
+            <td><a href="https://www.amc.seoul.kr/asan/main.do">서울아산병원 바로가기</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">삼성서울병원</td>
+            <td><a href="https://map.naver.com/v5/search/%EC%82%BC%EC%84%B1%EC%84%9C%EC%9A%B8%EB%B3%91%EC%9B%90/place/11554044?c=15,0,0,0,dh&placePath=%3Fentry%253Dbmp">서울특별시 강남구 일원로 81 삼성서울병원</a></td>
+            <td>1599-3114</td>
+            <td><a href="http://www.samsunghospital.com/home/main/index.do">삼성서울병원 바로가기</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">서울대학교병원</td>
+            <td><a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%91%EC%9B%90/place/12130919?c=13,0,0,0,dh&placePath=%3Fentry=bmp">서울특별시 종로구 대학로 101 서울대학교병원</a></td>
+            <td>1588-5700</td>
+            <td><a href="http://www.snuh.org/intro.do">서울대학교병원 바로가기</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">연세세브란스병원</td>
+            <td><a href="https://map.naver.com/v5/search/%EC%97%B0%EC%84%B8%EC%84%B8%EB%B8%8C%EB%9E%80%EC%8A%A4%EB%B3%91%EC%9B%90/place/11693113?c=13,0,0,0,dh&placePath=%3Fentry%253Dbmp">서울특별시 서대문구 연세로 50-1 세브란스병원</a></td>
+            <td>1599-1004</td>
+            <td><a href="https://www.severance.healthcare/severance/index.do">연세세브란스병원 바로가기</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">서울성모병원</td>
+            <td><a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%84%B1%EB%AA%A8%EB%B3%91%EC%9B%90/place/11637436?c=15,0,0,0,dh&placePath=%3Fentry%253Dbmp">서울 서초구 반포대로 222 서울성모병원</a></td>
+            <td>1588-1511</td>
+            <td><a href="https://www.cmcseoul.or.kr/page/main">서울성모병원 바로가기</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 15px;">아주대학교병원</td>
+            <td><a href="https://map.naver.com/v5/search/%EC%95%84%EC%A3%BC%EB%8C%80%ED%95%99%EA%B5%90%EB%B3%91%EC%9B%90/place/12131117?c=15,0,0,0,dh&placePath=%3Fentry%253Dbmp">경기도 수원시 영동구 월드컵로 164 아주대학교병원</a></td>
+            <td>1688-6114</td>
+            <td><a href="http://hosp.ajoumc.or.kr/">아주대학교병원 바로가기</a></td>
+          </tr>
+    </table>
+    <br><br>
+    <h1 style="text-align:center;"><a href="/" >🏡</a></h1>
+</div>
+</body>
+</html>
