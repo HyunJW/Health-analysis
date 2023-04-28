@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        #information{
+            border:1px solid #cccccc;
+            width: 60%;
+            height: 900px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        table {
+            text-align:center;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left:auto;
+            margin-right:auto;
+            border: 2px solid;
+        }
+        th, tr, td {
+            border: 1px solid;
+        }
         #Wrap{width:100%; overflow:hidden; margin:0 auto; padding-top: 50px}
         header {
               position: auto;
@@ -17,7 +38,7 @@
               padding-left: 32px;
               padding-right: 32px;
               background-size: cover;
-              background-color: white;
+              background-color: transparent;
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -73,9 +94,9 @@
               }
     </style>
 </head>
-<body >
+<body style="background-image: url('../../static/images/background.jpg')">
 <header>
-        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+    <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
       <ul class="ul_m">
           <li class="li_m">|</li>
           <li class="li_m">
@@ -106,50 +127,60 @@
     </header>
 <br>
 <div id="Wrap">
+    <div id="information">
     <h1 style="text-align: center">건강 관리 정보</h1>
-    <table style="border-collapse: collapse;
-                  margin-left:auto; margin-right:auto;
-                  width: 1200px; "
-                  border="2px">
-          <tr style="font-size: 15pt; padding: 15px;text-align:center; ">
+    <table>
+        <tr style="font-size: 15pt; padding: 15px;text-align:center; ">
             <th style="padding: 15px;">병명</th>
             <th>추천 음식</th>
             <th>주의 사항</th>
             <th>자세히 보기</th>
-          </tr>
-          <tr>
-            <td style="padding: 15px;text-align:center;">당뇨병</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px;text-align:center;">
+                당뇨병
+            </td>
             <td>
                 <li>우엉</li>
                 <li>콩</li>
                 <li>해조류(미역, 다시마, 해초 등)</li>
-                <li>브로콜리</li></td>
+                <li>브로콜리</li>
+            </td>
             <td>
                 <li>규칙적인 식습관 필요</li>
                 <li>단순당 섭취시 주의 요함</li>
                 <li>염분 섭취 주의 요함</li>
                 <li>동물성 기름을 식물성 기름으로 대체</li>
             </td>
-            <td><a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5305"
-                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">당뇨병 자세히 보기</a></td>
-          </tr>
-          <tr>
+            <td>
+                <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5305"
+                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                    당뇨병 자세히 보기
+                </a>
+            </td>
+        </tr>
+        <tr>
             <td style="padding: 15px;text-align:center;">뇌졸중</td>
             <td>
                 <li>콩제품(두부, 비지, 유부 등)</li>
                 <li>어패류(멸치, 새우살, 조개 등)</li>
                 <li>해조류(미역, 다시마, 해초 등)</li>
-                <li>속 하얀 과일(사과, 배 등)</li></td>
+                <li>속 하얀 과일(사과, 배 등)</li>
+            </td>
             <td>
                 <li>규칙적인 식습관 필요</li>
                 <li>염분 섭취 주의 요함</li>
                 <li>단백질 섭취 필요</li>
                 <li>동물성 기름을 식물성 기름으로 대체</li>
             </td>
-            <td><a href="https://health.kdca.go.kr/healthinfo/biz/health/ccvdInfo/ccvcdInfo/cbvcacdInfoMain.do"
-                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">뇌졸중 자세히 보기</a></td>
-          </tr>
-          <tr>
+            <td>
+                <a href="https://health.kdca.go.kr/healthinfo/biz/health/ccvdInfo/ccvcdInfo/cbvcacdInfoMain.do"
+                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                    뇌졸중 자세히 보기
+                </a>
+            </td>
+        </tr>
+        <tr>
             <td style="padding: 15px;text-align:center;">고혈압</td>
             <td>
                 <li>연어</li>
@@ -157,16 +188,21 @@
                 <li>콩과 렌틸콩</li>
                 <li>당근</li>
                 <li>샐러리</li>
-                <li>브로콜리</li></td>
+                <li>브로콜리</li>
+            </td>
             <td>
                 <li>금연 필수적으로 요함</li>
                 <li>절주 요함</li>
                 <li>스트레스 예방 필요</li>
             </td>
-            <td><a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5300"
-                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">고혈압 자세히 보기</a></td>
-          </tr>
-               <tr>
+            <td>
+                <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5300"
+                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                    고혈압 자세히 보기
+                </a>
+            </td>
+        </tr>
+        <tr>
             <td style="padding: 15px;text-align:center;">심장마비</td>
             <td>
                 <li>마늘</li>
@@ -174,19 +210,24 @@
                 <li>견과류</li>
                 <li>유제품</li>
                 <li>아로니아</li>
-                <li>튀기지 않은 감자</li></td>
+                <li>튀기지 않은 감자</li>
+            </td>
             <td>
                 <li>금연 요함</li>
                 <li>절주 요함</li>
                 <li>적정한 체중 유지 필요</li>
                 <li>꾸준한 건강한 식사 습관 필요</li>
             </td>
-            <td><a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5438"
-                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">심장마비 자세히 보기</a></td>
-          </tr>
+            <td>
+                <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5438"
+                   onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                    심장마비 자세히 보기
+                </a>
+            </td>
+        </tr>
     </table>
     <br><br>
-    <h1 style="text-align:center;"><a href="/" >🏡</a></h1>
+    <h1 style="text-align: center;position: relative;"><a href="/" >🏡</a></h1>
 </div>
 </body>
 </html>
