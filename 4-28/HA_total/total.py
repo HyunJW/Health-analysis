@@ -1,12 +1,9 @@
-from flask import Flask, render_template, request, jsonify, session, escape
+from flask import Flask, render_template, request
 import joblib
 from keras.models import load_model
 import numpy as np
 
 app = Flask(__name__)
-
-
-
 
 @app.errorhandler(404)
 def notpage(error):
@@ -218,7 +215,7 @@ def stroke_result():
     test_set_scaled = scaler.transform(test_set)
     print(test_set_scaled.shape)
     print(test_set_scaled)
-    rate = kerasmodel.predict(test_set_scaled)
+    rate = kerasmodel.predict(test_set_scaled)[0][0]
     return render_template('stroke/result.html', rate=rate,
                            SEX=SEX, AGE=AGE, HYPERTENSION=HYPERTENSION, HEART_DISEASE=HEART_DISEASE, WORK_TYPE=WORK_TYPE,
                            RESIDENCE_TYPE=RESIDENCE_TYPE, AVG_GLUCOSE_LEVEL=AVG_GLUCOSE_LEVEL, BMI=BMI,
