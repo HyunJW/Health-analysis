@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>예측 결과</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #Wrap{
+            border: 1px solid #cccccc;
+            width: 60%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        #Header{
+            width: auto;
+            border: 1px solid #cccccc;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center
+        }
+        #predict{
+            float: left;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+            width: 50%;
+            height: 600px;
+            padding-left: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        #information{
+            float: right;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+            width: 50%;
+            height: 600px;
+            overflow: scroll;
+            padding-left: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        #footer{
+            width: 100%;
+            border: 1px solid #cccccc;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        table{
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid;
+        }
+        th, tr, td{
+            border: 1px solid;
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="Wrap">
+        <div id="Header">고혈압 예측 결과표</div>
+
+        <div id="predict">
+            나이: {{ age }}<br>
+            휴식기 혈압: {{ trestbps }}<br>
+            최대 심박수: {{ thalach }}<br>
+            휴식 대비 운동으로 인한 ST하강: {{ oldpeak }}<br>
+            성별: {{ sex }}<br>
+            흉통: {{ cp }}<br>
+            공복혈당: {{ fbs }}<br>
+            휴식 중 심전도 결과: {{ ecg }}<br>
+            운동으로 인한 협심증 여부: {{ exang }}<br>
+            활동 ST분절 피크의 기울기: {{ slope }}<br>
+            형광투시법으로 확인된 주요 혈관 유무: {{ ca }}<br><br>
+
+            <h2>고혈압 진단 예측 결과: {{ result }}({{ rate }})</h2>
+        </div>
+
+        <div id="information">
+            <li class="li_m">혈압 수치 기준</li>
+            <table>
+                <tr style="font-size: 15pt;">
+                    <th>혈압 분류</th>
+                    <th>수축기혈압(mmHg)</th>
+                    <th></th>
+                    <th>이완기혈압(mmHg)</th>
+                </tr>
+                <tr>
+                    <td>정상혈압</td>
+                    <td><120</td>
+                    <td>그리고</td>
+                    <td><80</td>
+                </tr>
+                <tr>
+                    <td>주의혈압</td>
+                    <td>120~129</td>
+                    <td>그리고</td>
+                    <td><80</td>
+                </tr>
+                <tr>
+                    <td>고혈압전단계</td>
+                    <td>130~139</td>
+                    <td>또는</td>
+                    <td>80~89</td>
+                </tr>
+                <tr>
+                    <td>고혈압 1기</td>
+                    <td>140~159</td>
+                    <td>또는</td>
+                    <td>90~99</td>
+                </tr>
+                <tr>
+                    <td>고혈압 2기</td>
+                    <td>160~</td>
+                    <td>또는</td>
+                    <td>100~</td>
+                </tr>
+                <tr>
+                    <td>수축기단독고혈압</td>
+                    <td>140~</td>
+                    <td>그리고</td>
+                    <td><90</td>
+                </tr>
+            </table>
+
+            <br><br>
+
+            <li class="li_m">공복 혈당 수치 기준</li>
+            <table>
+                <tr style="font-size: 15pt;">
+                    <th>공복혈당분류</th>
+                    <th>공복혈당수치(mg/dL)</th>
+                </tr>
+                <tr>
+                    <td>정상수치</td>
+                    <td><100</td>
+                </tr>
+                <tr>
+                    <td>공복혈당장애</td>
+                    <td>100~125</td>
+                </tr>
+                <tr>
+                    <td>당뇨병</td>
+                    <td>126~</td>
+                </tr>
+            </table>
+
+            <br><br>
+
+            <li class="li_m">BMI 수치 기준</li>
+            <table>
+                <tr style="font-size: 15pt;">
+                    <th rowspan="2">비만분류</th>
+                    <th colspan="2">체질량지수</th>
+                </tr>
+                <tr>
+                    <th>세계기준</th>
+                    <th>국내기준</th>
+                </tr>
+                <tr>
+                    <td>저체중</td>
+                    <td>18.5 미만</td>
+                    <td>18.5 미만</td>
+                </tr>
+                <tr>
+                    <td>정상</td>
+                    <td>18.5~24.9</td>
+                    <td>18.5~22.9</td>
+                </tr>
+                <tr>
+                    <td>과체중</td>
+                    <td>25.0~29.9</td>
+                    <td>23.0~24.9</td>
+                </tr>
+                <tr>
+                    <td>비만</td>
+                    <td>30.0~39.0</td>
+                    <td>25.0~29.9</td>
+                </tr>
+                <tr>
+                    <td>고도비만</td>
+                    <td>40.0 이상</td>
+                    <td>30.0 이상</td>
+                </tr>
+            </table>
+
+            <br><br>
+
+            <li class="li_m">ST 하강 폭 기준</li>
+            <table>
+                <tr style="font-size: 15pt;">
+                    <th>진단 기준</th>
+                    <th>ST 하강 폭(mm)</th>
+                </tr>
+                <tr>
+                    <td>정상 범위</td>
+                    <td>0~1</td>
+                </tr>
+                <tr>
+                    <td>이상 범위</td>
+                    <td>1~</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="footer">
+            <form action="heartattack_advise">
+                <input type="submit" value="도움이 되는 정보">
+            </form>
+            <a href="/" >🏡</a>
+        </div>
+    </div>
+</body>
+</html>

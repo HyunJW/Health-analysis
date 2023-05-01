@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>예방접종</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #information{
+            border: 1px solid #cccccc;
+            width: 60%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        table{
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid;
+        }
+        th, tr, td{
+            border: 1px solid;
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="information">
+        <h1 style="text-align:center;">표준예방접종표</h1>
+        <table>
+            <tr>
+                <th>나이/조건</th>
+                <th>예방접종종류</th>
+                <th>참고사항</th>
+            </tr>
+            <tr>
+                <td rowspan="2">19~39세</td>
+                <td>A형간염</td>
+                <td>2회 접종 (0, 6 ~ 12개월)</td>
+            </tr>
+            <tr>
+                <td>B형간염</td>
+                <td>항체검사결과가 음성이면 3회 접종 (0, 1, 6개월)</td>
+            </tr>
+            <tr>
+                <td>40~49세</td>
+                <td>파상풍-디프테리아 (Td백신)</td>
+                <td>10년마다 1회 접종, 처음 접종이면 3회 접종 (0, 1, 6 ~ 12개월)</td>
+            </tr>
+            <tr>
+                <td>50~64세</td>
+                <td>인플루엔자</td>
+                <td>매년 10 ~ 11월에 1회</td>
+            </tr>
+            <tr>
+                <td>65세 이상</td>
+                <td>폐렴사슬알균</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <a href="https://nip.kdca.go.kr/irhp/mngm/goVcntMngm.do?menuLv=3&menuCd=331">
+                        예방접종 가능한 병원찾기
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <h1 style="text-align: center;position: static;bottom: 5%"><a href="/" >🏡</a></h1>
+    </div>
+</body>
+</html>
