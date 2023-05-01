@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>도움이 되는 정보</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #information{
+            border: 1px solid #cccccc;
+            width: 60%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="information">
+        <h2>당뇨</h2>
+        <hr>
+        <h3>당뇨에 좋은 운동</h3>
+        <ul>
+            <li>매일 꾸준히 식후 30분이상 운동하는 유산소 운동(조깅, 경보, 자전거 타기 등)</li>
+        </ul>
+        <br>
+        <h3>식사 요법의 기본원칙</h3>
+        <ol>
+            <li>매일 일정한 시간에 알맞은 양의 음식을 규칙적으로 먹습니다.</li>
+            <li>설탕이나 꿀 등 단순당의 섭취를 주의합니다.</li>
+            <li>식이 섬유소를 적절히 섭취합니다.</li>
+            <li>소금 섭취를 줄입니다.</li>
+            <li>술은 피하는 것이 좋습니다.</li>
+            <li>동물성 지방 및 콜레스테롤의 섭취를 줄이고 식물성 기름으로 적정량을 섭취합니다.</li>
+        </ol>
+        <br>
+        <h3>당뇨에 좋은 음식</h3>
+        <ol>
+            <li>우엉 - 당과 지질 성분을 체내로 흡수되지 않게 막아 혈당 수치가 높아지는 것을 막아줍니다.</li>
+            <li>콩 - 콩에 함유된 '레시틴'이라는 성분은 인슐린 분비를 촉진시켜 혈당 수치 저하에 도움을 줍니다.</li>
+            <li>해조류 - 해조류(미역, 다시마, 해초 등)에는 '알긴산'이라는 다당류가 함유돼 있어 섭취 후 혈당의 급격한 상승을 막아줍니다.</li>
+            <li>브로콜리<br>
+                - 브로콜리에 포함된 '폴리페놀'이라는 성분은 해로운 콜레스테롤(LDL)의 산화를 억제하여 혈액을 맑게 정화시키는 역할을 합니다.<br>
+                - 폴리페놀이 함유된 또 다른 음식으로는 연근, 포도, 쑥갓, 가지, 사과 등이 있습니다.
+            </li>
+        </ol>
+        <br>
+        <h3>당뇨에 나쁜 음식</h3>
+        <ol>
+            <li>과자, 스낵류 - 염분과 당분이 많이 들어가 있는 식품으로 혈당 상승의 원인이 됩니다.</li>
+            <li>인스턴트, 패스트푸드<br>
+                - 인스턴트와 패스트푸드에 많은 기름은 림프 순환과 콩팥의 기능을 고장낼 수 있으므로 피해야 합니다.<br>
+                - 또한 많은 지방성분도 혈관에 쌓이면 당으로 인해 손상된 혈관 벽 건강에 악영향을 미칠 수 있습니다.
+            </li>
+            <li>곡물류<br>
+                - 정제 도정된 곡류로 만든 식품은 당 지수가 높습니다.<br>
+                - 대표적 식품으로는 빵, 면, 과자, 백미 등이 있습니다.
+            </li>
+            <li>과일 - 과일이 가진 당도 때문에 당뇨병에는 안 좋은 영향을 줄 수 있으므로 적당한 양의 섭취를 권장합니다.</li>
+        </ol>
+        <br>
+        <h3 style="text-align:center;"><a href="#" onclick="history.back()">Back</a></h3>
+        <h1 style="text-align:center;"><a href="/" >🏡</a></h1>
+    </div>
+</body>
+</html>
