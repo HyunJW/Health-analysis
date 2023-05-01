@@ -109,7 +109,7 @@ def heartattack_result():
     pred = round(model.predict_proba(test_set)[0][1]*100,2)
 
     if pred >= 50:
-        result = '심장마비 가능성 많음'
+        result = '심장마비 가능성 높음'
     else:
         result = '심장마비 가능성 적음'
 
@@ -215,8 +215,12 @@ def stroke_result():
     test_set_scaled = scaler.transform(test_set)
     print(test_set_scaled.shape)
     print(test_set_scaled)
-    rate = kerasmodel.predict(test_set_scaled)[0][0]
-    return render_template('stroke/result.html', rate=rate,
+    rate = round(kerasmodel.predict(test_set_scaled)[0][0]*100,2)
+    if rate >= 0.5:
+        result = '뇌졸중 가능성 높음'
+    else:
+        result = '뇌졸중 가능성 적음'
+    return render_template('stroke/result.html', rate=rate, result=result,
                            SEX=SEX, AGE=AGE, HYPERTENSION=HYPERTENSION, HEART_DISEASE=HEART_DISEASE, WORK_TYPE=WORK_TYPE,
                            RESIDENCE_TYPE=RESIDENCE_TYPE, AVG_GLUCOSE_LEVEL=AVG_GLUCOSE_LEVEL, BMI=BMI,
                            SMOKING_STATUS=SMOKING_STATUS)
@@ -465,9 +469,9 @@ def diabetes_result():
     predict = [1 if prob >= 0.5 else 0]
 
     if predict[0] == 1:
-        result = '당뇨'
+        result = '당뇨 가능성 높음'
     else:
-        result = '정상'
+        result = '당뇨 가능성 적음'
 
     return render_template('diabetes/result.html', prob=f'{100 * prob[0][0]:.2f}%', result=result,
                            age=age, sex=sex, chol=chol, chol_check=chol_check, BMI=BMI,
