@@ -216,7 +216,7 @@ def stroke_result():
     print(test_set_scaled.shape)
     print(test_set_scaled)
     rate = round(kerasmodel.predict(test_set_scaled)[0][0]*100,2)
-    if rate >= 0.5:
+    if rate >= 50:
         result = '뇌졸중 가능성 높음'
     else:
         result = '뇌졸중 가능성 적음'
@@ -468,7 +468,7 @@ def diabetes_result():
     print(prob)
     predict = [1 if prob >= 0.5 else 0]
 
-    if predict[0] == 1:
+    if predict[0] >= 0.5:
         result = '당뇨 가능성 높음'
     else:
         result = '당뇨 가능성 적음'
