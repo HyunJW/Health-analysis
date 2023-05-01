@@ -227,7 +227,7 @@ def stroke_result():
 
 @app.route('/hypertension_result', methods=['POST'])
 def hypertension_result():
-    model = load_model('c:/HA_total/hypertension_model.h5')
+    model = joblib.load('c:/HA_total/hypertension_mlp.h5')
     age = int(request.form['age'])
     trestbps = int(request.form['trestbps'])
     thalach = int(request.form['thalach'])
@@ -288,13 +288,13 @@ def hypertension_result():
                  ca_n, ca_y]]
     scaler = joblib.load("c:/HA_total/scaler.sav")
     test_set = scaler.transform(test_set)
-    rate = model.predict(test_set)
+    rate = model.predict_proba(test_set)[0][1]
     if rate >= 0.5:
         result = '고혈압 가능성 높음'
     else:
         result = '고혈압 가능성 적음'
     return render_template('hypertension/result.html',
-                           rate='{:.2f}%'.format(rate[0][0]*100), result=result,
+                           rate='{:.2f}%'.format(rate*100), result=result,
                            age=age, trestbps=trestbps, thalach=thalach, oldpeak=oldpeak,
                            sex=gender, cp=cp, fbs=fbs, ecg=ecg, exang=exang, slope=slope, ca=ca)
 
