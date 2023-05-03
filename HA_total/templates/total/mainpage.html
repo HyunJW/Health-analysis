@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>건강 예측 검사</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 97%;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        li{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        html{
+            height: 1000px;
+            width: 1800px;
+            line-height: 1.6;
+            margin-left: 20px;
+        }
+        main{
+            background-image: url("../../static/images/background.jpg");
+            left: auto%;
+            width: 70%;
+            float: left;
+            height: 575px;
+            margin: 0.5%;
+            padding: 3.5%;
+            text-align: left;
+            color: rgb(191, 127, 63);
+            /* column-count: 2;
+            row-gap: 2; */
+            border: 1px solid;
+        }
+        div {
+            width: 48%;
+            float: left;
+            max-height: 45%;
+            margin: 0.5%;
+            padding: 0.5%;
+            text-align: center;
+            border : fixed;
+        }
+        footer {
+            text-align: right;
+            float: left;
+        }
+        article {
+            width: 99.2%;
+            height: 230px;
+            float: left;
+            border: 1px solid;
+            position: relative;
+        }
+        side{
+            width: 10.5%;
+            float: left;
+            height: 700px;
+            border: 1px solid;
+            margin-top: 0.5%;
+        }
+        body{
+            background-size: cover;
+            background-color: white;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_p{
+            width: 100%;
+            height: 55px;
+            background-color: transparent;
+            border-top: 3px solid black;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_p:hover{
+            width: 100%;
+            height: 55px;
+            background-color: gray;
+            border-top: 3px solid black;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+    <article>
+        <img src="{{ url_for('static', filename='images/main.jpg') }}" width="100%" height="100%">
+    </article>
+    <side>
+        <a href="/vaccination"><img src="{{ url_for('static', filename='images/test.jpg') }}" width="100%" height="100%"></a>
+    </side>
+    <main>
+        <div class="heartattack">
+            <a href="/heartattack">
+                <img src="{{ url_for('static', filename='images/heart.jpg') }}" width='600px' height="300px">
+            </a>
+        </div>
+        <div class="hypertension">
+            <a href="/hypertension">
+                <img src="{{ url_for('static', filename='images/hyper.jpg') }}" width='600px' height="300px">
+            </a>
+        </div>
+        <div class="stroke">
+            <a href="/stroke">
+                <img src="{{ url_for('static', filename='images/stroke.jpg') }}" width='600px' height="300px">
+            </a>
+        </div>
+        <div class="diabetes">
+            <a href="/diabetes">
+                <img src="{{ url_for('static', filename='images/dia.jpg') }}" width='600px' height="300px">
+            </a>
+        </div>
+    </main>
+    <side>
+        <a href="/checkup">
+            <img src="{{ url_for('static', filename='images/test01.jpg') }}" width="100%" height="100%">
+        </a>
+    </side>
+    <footer>
+        <p>Tel : 02)222-2323</p>
+        <p>만든이들: 김창균, 송수린, 송찬의, 현정환</p>
+    </footer>
+</body>
+</html>
