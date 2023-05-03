@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>도움이 되는 정보</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #information{
+            border: 1px solid #cccccc;
+            width: 60%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="information">
+        <h2>뇌졸중</h2>
+        <hr>
+        <h3>뇌졸중에 좋은 운동</h3>
+        <ul>
+            <li>무리하지 않는 운동(걷기가 가장 좋습니다.)</li>
+            <li>헬스 등 무거운 중량으로 하는 운동은 혈압을 올려 오히려 악화될 가능성이 있으므로 피하는 것이 좋습니다.</li>
+        </ul>
+        <br>
+        <h3>식사 요법의 기본원칙</h3>
+        <ol>
+            <li>음식을 싱겁게 먹어야 합니다.</li>
+            <li>소량의 알코올을 섭취하는 것은 스트레스를 해소하고 수면을 유발하는 등의 효과가 있으므로 좋습니다.</li>
+            <li>단백질을 적어도 체중 1kg당 1g정도는 섭취합니다.</li>
+            <li>동물성 지방 및 콜레스테롤의 섭취를 줄이고 식물성 기름으로 적정량을 섭취합니다.</li>
+            <li>매일 일정한 시간에 알맞은 양의 음식을 규칙적으로 먹습니다.</li>
+        </ol>
+        <br>
+        <h3>뇌졸중에 좋은 음식</h3>
+        <ol>
+            <li>콩제품(두부, 비지, 유부 등) - 뇌종줄 예방효과가 있으므로 하루에 한번 먹는 것을 추천합니다.</li>
+            <li>우유 및 유제품 - 단백질이 풍부하여 뇌졸중 예방에 좋습니다.</li>
+            <li>속 하얀 과일과 채소 - 속 하얀 과일과 채소(사과, 배, 오이 등)에는 '플라보노이드'가 있어 뇌 혈관 속 노폐물을 청소하는 역할을 합니다.</li>
+            <li>베리류 - 베리류(블루베리, 라즈베리, 딸기 등)에 있는 '안토시아닌'이 항산화 작용을 하여 뇌졸중 위험을 낮추는데 도움을 줍니다.</li>
+            <li>고칼륨 과일과 채소(바나나, 고구마, 키위 등) - 칼륨이 몸속 나트륨의 배출을 도와주어 혈압을 안정적으로 유지하도록 해줍니다.</li>
+            <li>해조류(다시마, 미역 등) - 혈관속 노폐물 제거하는 효과가 있습니다.</li>
+        </ol>
+        <br>
+        <h3>당뇨에 나쁜 음식</h3>
+        <ol>
+            <li>오징어, 새우, 게 - 생선보다 콜레스테롤이 많기 때문에 삼가하는게 좋습니다.</li>
+            <li>과도한 동물성 지방(고기의 지방부분, 닭껍질, 소시지 등) - 몸의 신진대사를 교란시켜 뇌 건강의 위험인자인 비만, 고지혈증, 당뇨병의 발생을 높입니다.</li>
+            <li>과도한 당분(초콜릿, 사탕류) - 뇌의 식습관을 관장하는 조절 중추 파괴하므로 피하는 것이 좋습니다.</li>
+            <li>과일 - 과일이 가진 당도 때문에 당뇨병에는 안 좋은 영향을 줄 수 있으므로 적당한 양의 섭취를 권장합니다.</li>
+            <li>정제된 흰밀가루로 만든 음식 - 쉽게 분해, 흡수되어 혈당을 급격히 올리게 되어 두뇌 활동 능력 저하시킵니다.</li>
+        </ol>
+        <br>
+        <h3 style="text-align:center;"><a href="#" onclick="history.back()">Back</a></h3>
+        <h1 style="text-align:center;"><a href="/" >🏡</a></h1>
+    </div>
+</body>
+</html>

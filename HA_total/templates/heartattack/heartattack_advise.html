@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>도움이 되는 정보</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #information{
+            border: 1px solid #cccccc;
+            width: 60%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="information">
+        <h2>심장마비</h2>
+        <hr>
+        <h3>심장마비(협심증)에 좋은 운동</h3>
+        <ul>
+            <li>17세 이하: 매일 60분 이상 유산소</li>
+            <li>성인: 일주일에 150~300분의 적당한 유산소 또는 75~150분의 격렬한 운동</li>
+            <li>65세 이상: 일부일에 150분 이상의 중등도 유산소</li>
+        </ul>
+        <br>
+        <h3>식사 요법의 기본원칙</h3>
+        <ol>
+            <li>소금을 1일 6gm 이하로 섭취합니다.</li>
+            <li>다양한 종류의 과일과 야채를 매일 섭취합니다.</li>
+            <li>꾸준한 건강한 식사 습관 필요합니다.</li>
+        </ol>
+        <br>
+        <h3>심장마비(협심증)에 좋은 음식</h3>
+        <ol>
+            <li>포도, 블루베리, 가지, 아로니아 - 안토시아닌이 함유되어있어 활성산소를 없애 항산화에 도움을 줍니다.</li>
+            <li>고등어, 청어, 참치, 연어 - 오메가3 지방산이 함유되어 있어 혈액을 깨끗이 해줍니다.</li>
+            <li>마늘 - 알리신이 함유되어있어 혈전 방지, 혈액 순환에 좋습니다.</li>
+            <li>견과류 - 비타민 E가 풍부하여 혈관 노화 방지에 좋고, 콜레스테롤을 배출하는데 도움을 줍니다.</li>
+            <li>유제품, 멸치, 미꾸라지 - 칼슘이 풍부하여 심장 근육 기능 유지와 신경 기능 조절에 좋습니다.</li>
+            <li>튀기지 않은 감자 - 칼륨과 섬유질이 풍부하여 심장 질환 위험을 감소하는데 도움이 됩니다.</li>
+        </ol>
+        <br>
+        <h3>심장마비(협심증)에 나쁜 음식</h3>
+        <ol>
+            <li>트랜스 지방이 함유된 음식 - 채내 염증 물질을 늘려 혈관 기능에 문제 발생 위험이 높아집니다.</li>
+            <li>가공된 고기 - 콜레스테롤이 높고 나트륨 함량이 높아 주의 필요합니다.</li>
+            <li>밀가루와 같은 정제된 곡물</li>
+        </ol>
+        <br>
+        <h3>심장마비 위험을 낮추기 위해 해야 하는 것</h3>
+        <ol>
+            <li>금연</li>
+            <li>금주</li>
+            <li>적정한 체중 유지</li>
+        </ol>
+        <br>
+        <h3 style="text-align:center;"><a href="#" onclick="history.back()">Back</a></h3>
+        <h1 style="text-align:center;"><a href="/" >🏡</a></h1>
+    </div>
+</body>
+</html>

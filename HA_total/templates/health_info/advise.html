@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>건강 관리 정보</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #Wrap{
+            border: 1px solid #cccccc;
+            width: 60%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        table{
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid;
+        }
+        th, tr, td{
+            border: 1px solid;
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .td_li{
+            text-align: left;
+            padding-left: 10px;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="Wrap">
+        <h1 style="text-align: center">건강 관리 정보</h1>
+        <table>
+            <tr style="font-size: 15pt; padding: 15px;text-align:center; ">
+                <th style="padding: 15px;">병명</th>
+                <th>추천 음식</th>
+                <th>주의 사항</th>
+                <th>자세히 보기</th>
+            </tr>
+            <tr>
+                <td style="padding: 15px;text-align:center;">
+                    당뇨병
+                </td>
+                <td class="td_li">
+                    <li>우엉</li>
+                    <li>콩</li>
+                    <li>해조류(미역, 다시마, 해초 등)</li>
+                    <li>브로콜리</li>
+                </td>
+                <td class="td_li">
+                    <li>규칙적인 식습관 필요</li>
+                    <li>단순당 섭취시 주의 요함</li>
+                    <li>염분 섭취 주의 요함</li>
+                    <li>동물성 기름을 식물성 기름으로 대체</li>
+                </td>
+                <td>
+                    <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5305"
+                       onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                        당뇨병 자세히 보기
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 15px;text-align:center;">뇌졸중</td>
+                <td class="td_li">
+                    <li>콩제품(두부, 비지, 유부 등)</li>
+                    <li>어패류(멸치, 새우살, 조개 등)</li>
+                    <li>해조류(미역, 다시마, 해초 등)</li>
+                    <li>속 하얀 과일(사과, 배 등)</li>
+                </td>
+                <td class="td_li">
+                    <li>규칙적인 식습관 필요</li>
+                    <li>염분 섭취 주의 요함</li>
+                    <li>단백질 섭취 필요</li>
+                    <li>동물성 기름을 식물성 기름으로 대체</li>
+                </td>
+                <td>
+                    <a href="https://health.kdca.go.kr/healthinfo/biz/health/ccvdInfo/ccvcdInfo/cbvcacdInfoMain.do"
+                       onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                        뇌졸중 자세히 보기
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 15px;text-align:center;">고혈압</td>
+                <td class="td_li">
+                    <li>연어</li>
+                    <li>근대</li>
+                    <li>콩과 렌틸콩</li>
+                    <li>당근</li>
+                    <li>샐러리</li>
+                    <li>브로콜리</li>
+                </td>
+                <td class="td_li">
+                    <li>금연 필수적으로 요함</li>
+                    <li>절주 요함</li>
+                    <li>스트레스 예방 필요</li>
+                </td>
+                <td>
+                    <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5300"
+                       onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                        고혈압 자세히 보기
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 15px;text-align:center;">심장마비</td>
+                <td class="td_li">
+                    <li>마늘</li>
+                    <li>고등어, 참치, 연어</li>
+                    <li>견과류</li>
+                    <li>유제품</li>
+                    <li>아로니아</li>
+                    <li>튀기지 않은 감자</li>
+                </td>
+                <td class="td_li">
+                    <li>금연 요함</li>
+                    <li>절주 요함</li>
+                    <li>적정한 체중 유지 필요</li>
+                    <li>꾸준한 건강한 식사 습관 필요</li>
+                </td>
+                <td>
+                    <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5438"
+                       onclick="window.open(this.href, '_blank', 'width=1000, height=1000');return false;">
+                        심장마비 자세히 보기
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <h1 style="text-align: center;position: relative;"><a href="/" >🏡</a></h1>
+    </div>
+</body>
+</html>

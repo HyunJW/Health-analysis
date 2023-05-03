@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>뇌졸중 예측 검사</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #Wrap{
+            border: 1px solid #cccccc;
+            width: 60%;
+            height: 700px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        table{
+            text-align: center;
+            background-color: #eee;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid;
+        }
+        th, tr, td{
+            border: 1px solid;
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .select_size{
+            width: 175px;
+            text-align: center;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="Wrap">
+        <form method="post" action="stroke_result">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        <h2>뇌졸중 예측 질문지</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <select class="select_size" name="SEX">
+                            <option value="1" selected>남자</option>
+                            <option value="0">여자</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>나이</th>
+                    <td><input type="text" name="AGE" value="42"></td>
+                </tr>
+                <tr>
+                    <th>고혈압</th>
+                    <td>
+                        <select class="select_size" name="HYPERTENSION">
+                            <option value="1">예</option>
+                            <option value="0" selected>아니오</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>심장병</th>
+                    <td>
+                        <select class="select_size" name="HEART_DISEASE">
+                            <option value="1" selected>예</option>
+                            <option value="0">아니오</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>근무 형태</th>
+                    <td>
+                        <select class="select_size" name="WORK_TYPE">
+                            <option value="0">무직</option>
+                            <option value="1">알바</option>
+                            <option value="2">공무직</option>
+                            <option value="3" selected>직장인</option>
+                            <option value="4">자영업</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>주거 지역</th>
+                    <td>
+                        <select class="select_size" name="RESIDENCE_TYPE">
+                            <option value="1" selected>도시</option>
+                            <option value="0">시골</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>평균 글리코겐 수치</th>
+                    <td>
+                        <input type="text" name="AVG_GLUCOSE_LEVEL" value="80.13">
+                    </td>
+                </tr>
+                <tr>
+                    <th>BMI</th>
+                    <td><input type="text" name="BMI" value="23.4"></td>
+                </tr>
+                <tr>
+                    <th>흡연 여부</th>
+                    <td>
+                        <select class="select_size" name="SMOKING_STATUS">
+                            <option value="1">예</option>
+                            <option value="0" selected>아니오</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="width: 80px; height: 40px; font-size: 17px" type="submit" value="제출">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

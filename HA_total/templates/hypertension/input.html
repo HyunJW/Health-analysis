@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>고혈압 예측 검사</title>
+    <style>
+        header{
+            position: auto;
+            textarea: fixed;
+            margin: auto;
+            width: 1800px;
+            top: 10px;
+            text-align: center;
+            height: 75px;
+            float: left;
+            padding-left: 32px;
+            padding-right: 32px;
+            background-size: cover;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #Wrap{
+            border: 1px solid #cccccc;
+            width: 60%;
+            height: 700px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin: auto;
+            background: white;
+            padding: 2%
+        }
+        table{
+            text-align: center;
+            background-color: #eee;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid;
+        }
+        th, tr, td{
+            border: 1px solid;
+        }
+        .ul_m {
+            list-style-type: none;
+            padding: 0;
+        }
+        .li_m{
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 18px;
+            font-weight: flex;
+        }
+        .input_m{
+            width: 150px;
+            height: 35px;
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .input_m:hover{
+            width: 150px;
+            height: 35px;
+            background-color: gray;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        .select_size{
+            width: 175px;
+            text-align: center;
+        }
+        #home{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            color: black;
+            text-decoration-line : none;
+        }
+        #home:hover{
+            background-color: transparent;
+            font-size: 13pt;
+            font-weight: bold;
+            background-color: gray;
+            color: black;
+            text-decoration-line : none;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../static/images/background.jpg')">
+    <header>
+        <a href="/" id="home"><h2>건강 예측 검사 사이트</h2></a>
+            <ul class="ul_m">
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="information">
+                        <input class="input_m" type="submit" value="건강 수치 기준">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="hospital">
+                        <input class="input_m" type="submit" value="대학병원 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="advise">
+                        <input class="input_m" type="submit" value="건강 관리 정보">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="source">
+                        <input class="input_m" type="submit" value="질병 분석 소스">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+                <li class="li_m">
+                    <form action="menu5" method="get">
+                        <input class="input_m" type="submit" value="menu5">
+                    </form>
+                </li>
+                <li class="li_m">|</li>
+            </ul>
+    </header>
+
+    <br><br><br><br><hr><br>
+
+    <div id="Wrap">
+        <form method="post" action="hypertension_result">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        <h2>고혈압 예측 질문지</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <th>나이</th>
+                    <td><input type="text" name="age" value="27"></td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <select class="select_size" name="sex">
+                            <option value="male" selected>남성</option>
+                            <option value="female">여성</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>흉통 여부</th>
+                    <td>
+                        <select class="select_size" name="cp">
+                            <option value="N" selected>흉통 없음</option>
+                            <option value="Y">흉통 있음</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>휴식기 혈압</th>
+                    <td><input type="text" name="trestbps" value="97"></td>
+                </tr>
+                <tr>
+                    <th>공복혈당</th>
+                    <td><input type="text" name="fbs" value="125"></td>
+                </tr>
+                <tr>
+                    <th>휴식 중 심전도 결과</th>
+                    <td>
+                        <select class="select_size" name="ecg">
+                            <option value="N" selected>이상 없음</option>
+                            <option value="Y">이상 있음</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>최대 심박수</th>
+                    <td><input type="text" name="thalach" value="130"></td>
+                </tr>
+                <tr>
+                    <th>운동 유발성 협심증 여부</th>
+                    <td>
+                        <select class="select_size" name="exang">
+                            <option value="N" selected>없음</option>
+                            <option value="Y">있음</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>휴식 대비 운동으로 인한 ST하락 폭</th>
+                    <td><input type="text" name="oldpeak" value="0.7"></td>
+                </tr>
+                <tr>
+                    <th>활동 ST분절 피크의 기울기</th>
+                    <td>
+                        <select class="select_size" name="slope">
+                            <option value="N" selected>변화 없음</option>
+                            <option value="Y">변화 있음</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>형광투시법으로 확인된 주요 혈관 유무</th>
+                    <td>
+                        <select class="select_size" name="ca">
+                            <option value="N" selected>발견된 혈관 없음</option>
+                            <option value="Y">발견된 혈관 있음</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="width: 80px; height: 40px; font-size: 17px" type="submit" value="제출">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
