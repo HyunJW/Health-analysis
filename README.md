@@ -4,7 +4,7 @@
 
 ## 사용한 언어 및 라이브러리, 프레임워크
 - Python(Visual Studio Code)
-  - konlpy, jpype, pickle, tensorflow, pandas, os, glob, re, json, time, selenium, numpy, seqeval, matplotlib, sklearn, pymysql, logging, random, threading, socket, MySQLdb, itertools, ast
+  - joblib, keras, numpy, sklearn, seaborn, pandas, matplotlib, statsmodels, pydotplus, graphviz, IPython, imblearn
 - HTML
 - MySQL
 - Flask(PyCharm)
