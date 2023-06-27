@@ -3,11 +3,11 @@
 - Kaggle
 
 ## 사용한 언어 및 라이브러리, 프레임워크
-- Python(Visual Studio Code)
+- Python
   - joblib, keras, numpy, sklearn, seaborn, pandas, matplotlib, statsmodels, pydotplus, graphviz, IPython, imblearn
 - HTML
 - MySQL
-- Flask(PyCharm)
+- Flask
 
 ## 순서
 #### 1. 데이터 전처리
