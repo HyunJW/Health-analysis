@@ -2,51 +2,65 @@ from flask import Flask, render_template, request
 import joblib
 from keras.models import load_model
 import numpy as np
+import tensorflow as tf
 
 app = Flask(__name__)
+
 
 @app.errorhandler(404)
 def notpage(error):
     return render_template('total/errorpage.html')
+
+
 @app.errorhandler(500)
 def servererror(error):
     return render_template('total/errorserver.html')
 
+
 @app.route('/advise', methods=['GET'])
 def advise():
     return render_template('health_info/advise.html')
+
+
 @app.route('/')
 def main():
     return render_template('total/mainpage.html')
+
 
 @app.route('/information', methods=['GET'])
 def information():
     return render_template('health_info/information.html')
 
+
 @app.route('/hospital', methods=['GET'])
 def hospital():
     return render_template('health_info/hospital.html')
+
 
 @app.route('/heartattack', methods=['GET'])
 def heartattack():
     return render_template('heartattack/input.html')
 
+
 @app.route('/stroke', methods=['GET'])
 def stroke():
     return render_template('stroke/input.html')
+
 
 @app.route('/hypertension', methods=['GET'])
 def hypertension():
     return render_template('hypertension/input.html')
 
+
 @app.route('/diabetes', methods=['GET'])
 def diabetes():
     return render_template('diabetes/input.html')
 
+
 @app.route('/heartattack_result',methods=['POST'])
 def heartattack_result():
-    model = joblib.load('C:/HA_total/heart_model.h5')
-    scaler = joblib.load('C:/HA_total/heart.sav')
+    model = joblib.load('./model/heart_model.h5')
+    scaler = joblib.load('./model/heart_scaler.sav')
 
     age = float(request.form['age'])
     trtbps = float(request.form['trtbps'])
@@ -113,23 +127,18 @@ def heartattack_result():
     else:
         result = '심장마비 가능성 적음'
 
-    #pred=pred[0]*100
-
     return render_template('heartattack/result.html',
                            result=result, age=age, trtbps=trtbps,
                            thalach=thalach, oldspeak=oldspeak,
                            sex=sex, cp=cp, fbs=fbs, ecg=ecg, exang=exang,
                            sl=sl, ca=ca, pred=pred)
 
-import tensorflow as tf
+
 @app.route('/stroke_result',methods=['POST'])
 def stroke_result():
-    print(333)
-    print(444)
-    #kerasmodel = load_model('c:/Health Analysis/HA_total/test4/miniproject1.h5')
-    kerasmodel = tf.keras.models.load_model('c:/HA_total/miniproject1.h5', compile=False)
+    kerasmodel = tf.keras.models.load_model('./model/stroke_model.h5', compile=False)
 
-    scaler = joblib.load('c:/HA_total/miniscaler.sav')
+    scaler = joblib.load('./model/stroke_scaler.sav')
     SEX = request.form['SEX']
     AGE = float(request.form['AGE'])
     HYPERTENSION = request.form['HYPERTENSION']
@@ -213,21 +222,23 @@ def stroke_result():
                          WORK_TYPE_0, WORK_TYPE_1, WORK_TYPE_2, WORK_TYPE_3, WORK_TYPE_4, RESIDENCE_TYPE_T, RESIDENCE_TYPE_F,
                          AVG_GLUCOSE_LEVEL, BMI, SMOKING_STATUS_T, SMOKING_STATUS_F]).reshape(1, 18)
     test_set_scaled = scaler.transform(test_set)
-    print(test_set_scaled.shape)
-    print(test_set_scaled)
-    rate = round(kerasmodel.predict(test_set_scaled)[0][0]*100,2)
+    rate = round(kerasmodel.predict(test_set_scaled)[0][0]*100, 2)
+
     if rate >= 50:
         result = '뇌졸중 가능성 높음'
     else:
         result = '뇌졸중 가능성 적음'
+
     return render_template('stroke/result.html', rate=rate, result=result,
                            SEX=SEX, AGE=AGE, HYPERTENSION=HYPERTENSION, HEART_DISEASE=HEART_DISEASE, WORK_TYPE=WORK_TYPE,
                            RESIDENCE_TYPE=RESIDENCE_TYPE, AVG_GLUCOSE_LEVEL=AVG_GLUCOSE_LEVEL, BMI=BMI,
                            SMOKING_STATUS=SMOKING_STATUS)
 
+
 @app.route('/hypertension_result', methods=['POST'])
 def hypertension_result():
-    model = joblib.load('c:/HA_total/hypertension_mlp.h5')
+    model = joblib.load('./model/hypertension_model.h5')
+
     age = int(request.form['age'])
     trestbps = int(request.form['trestbps'])
     thalach = int(request.form['thalach'])
@@ -283,25 +294,30 @@ def hypertension_result():
     else:
         ca_n = 0
         ca_y = 1
+
     test_set = [[age, trestbps, thalach, oldpeak, female, male, cp_n, cp_y,
                  fbs_n, fbs_y, ecg_n, ecg_y, exang_n, exang_y, slope_n, slope_y,
                  ca_n, ca_y]]
-    scaler = joblib.load("c:/HA_total/scaler.sav")
+
+    scaler = joblib.load("model/hypertension_scaler.sav")
     test_set = scaler.transform(test_set)
     rate = model.predict_proba(test_set)[0][1]
+
     if rate >= 0.5:
         result = '고혈압 가능성 높음'
     else:
         result = '고혈압 가능성 적음'
+
     return render_template('hypertension/result.html',
                            rate='{:.2f}%'.format(rate*100), result=result,
                            age=age, trestbps=trestbps, thalach=thalach, oldpeak=oldpeak,
                            sex=gender, cp=cp, fbs=fbs, ecg=ecg, exang=exang, slope=slope, ca=ca)
 
+
 @app.route('/diabetes_result', methods=['POST'])
 def diabetes_result():
-    model = load_model('C:/HA_total/neo_keras.h5')
-    scaler = joblib.load('C:/HA_total/scaler.model')
+    model = load_model('./model/diabetes_model.h5')
+    scaler = joblib.load('./model/diabetes_scaler.model')
 
     age = int(request.form['age'])
     sex = request.form['sex']
@@ -465,7 +481,6 @@ def diabetes_result():
 
     input = scaler.transform(variables)
     prob = model.predict(input)
-    print(prob)
     predict = [1 if prob >= 0.5 else 0]
 
     if predict[0] >= 0.5:
@@ -478,53 +493,66 @@ def diabetes_result():
                            smoke=smoke, HDA=HDA, PA=PA, fruit=fruit, veggies=veggies,
                            HAC=HAC, GH=GH, MH=MH, PH=PH, DW=DW, stroke=stroke, HBP=HBP)
 
+
 @app.route('/diabetes_advise', methods=['GET'])
 def diabetes_advise():
     return render_template('diabetes/diabetes_advise.html')
+
 
 @app.route('/heartattack_advise', methods=['GET'])
 def heartattack_advise():
     return render_template('heartattack/heartattack_advise.html')
 
+
 @app.route('/hypertension_advise', methods=['GET'])
 def hypertension_advise():
     return render_template('hypertension/hypertension_advise.html')
+
 
 @app.route('/stroke_advise', methods=['GET'])
 def stroke_advise():
     return render_template('stroke/stroke_advise.html')
 
+
 @app.route('/source', methods=['GET'])
 def source():
     return render_template('health_info/project.html')
+
 
 @app.route('/heart', methods=['GET'])
 def heart():
     return render_template('source/heartattack.html')
 
+
 @app.route('/hyper', methods=['GET'])
 def hyper():
     return render_template('source/hypertension.html')
+
 
 @app.route('/stroke1', methods=['GET'])
 def stroke1():
     return render_template('source/stroke1.html')
 
+
 @app.route('/stroke2', methods=['GET'])
 def stroke2():
     return render_template('source/stroke2.html')
+
 
 @app.route('/dia', methods=['GET'])
 def dia():
     return render_template('source/diabetes.html')
 
+
 @app.route('/checkup', methods=['GET'])
 def checkup():
     return render_template('banner/checkup.html')
 
+
 @app.route('/vaccination', methods=['GET'])
 def vaccination():
     return render_template('banner/vaccination.html')
+
 
 if __name__ == '__main__':
     app.run(port=8888, threaded=False)
